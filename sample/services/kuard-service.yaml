@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kuard
+  labels:
+    app: kuard
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+  selector:
+    app: kuard
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kuard
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: kuard.vienna.lab.fullstacks.eu
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kuard
+          servicePort: 8080
