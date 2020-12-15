@@ -16,8 +16,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kuard
-  annotations:
-    kubernetes.io/ingress.class: traefik
 spec:
   rules:
   - host: kuard.vienna.lab.fullstacks.eu
