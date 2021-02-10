@@ -20,7 +20,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: kuard
+  name: podinfo
 spec:
   rules:
   - host: kuard.vienna.lab.fullstacks.eu
