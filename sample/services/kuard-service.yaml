@@ -15,18 +15,3 @@ spec:
       targetPort: grpc
       protocol: TCP
       name: grpc
----
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: podinfo
-spec:
-  rules:
-  - host: kuard.vienna.lab.fullstacks.eu
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: podinfo
-          servicePort: 9898
